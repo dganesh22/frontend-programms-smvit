@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pro {
+            height: 400px;
+            width: 400px;
+            border: 2px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <h1>Emoji shape</h1>
+
+    <canvas id="pro"></canvas>
+
+    <script>
+        var pro = document.getElementById("pro")
+
+        function drawShape() {
+            if(pro.getContext) {
+                let shp = pro.getContext("2d")
+
+                shp.beginPath();
+            // arc(x,y,radius,startAngle,endingAngle,boolean) true = clockwise, false = counter clockwise
+                shp.arc(75,75,50,0,Math.PI * 2, true) // outer circle
+                shp.moveTo(110,75)
+
+                shp.arc(75,75,35,0,Math.PI,false) // mouth
+                shp.moveTo(65,65)
+
+                shp.arc(60,65,5,0,Math.PI * 2, true) // left eye
+                shp.moveTo(95,65)
+
+                shp.arc(90,65,5,0,Math.PI * 2,true) // right eye
+
+                shp.stroke() // draw the shapes
+            }
+        }
+
+        drawShape()
+    </script>
+</body>
+</html>

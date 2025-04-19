@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pic {
+            width: 500px;
+            height: 500px;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>canvas tag</h1>
+    <!-- 2d images / shapes / logos / captcha -->
+
+    <canvas id="pic"></canvas>
+    <script>
+        var canv = document.getElementById("pic");
+        var ctx = canv.getContext("2d");
+            ctx.fillStyle = "orange";
+           // ctx.fillRect(40,20,100,50); // fillRect(x,y,width,height)
+           // ctx.strokeRect(70,50,100,50);
+            ctx.font = "30px cursive";
+            // ctx.fillText("Welcome to HTML", 30,40);
+            ctx.strokeText("Welcome to HTML", 30,40);
+    </script>
+</body>
+</html>
