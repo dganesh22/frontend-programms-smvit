@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #prog {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>progress</h1>
+
+    <h2 id="out"></h2>
+    <progress id="prog" min="0" max="100" value="1" step="1"></progress>
+
+    <script>
+        var out = document.getElementById("out")
+        var prg = document.getElementById("prog")
+
+        let x = 0;
+
+        function handler() {
+            if(x <= 100) {
+                x = x + 1;
+                prg.value = x;
+                out.innerText =  "Downloading in progress.." + x + "%";
+            } else {
+                out.innerText = "Upload completed";
+            }
+        }
+
+       // setInterval(function(){}, time) ms 
+        setInterval(handler,1000)
+    </script>
+</body>
+</html>

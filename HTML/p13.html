@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dialog tag (pop up window) </h1>
+
+    <!-- alert, error, logout, confirmation, success -->
+
+    <button id="btn">Show Dialog</button>
+
+    <dialog id="box">
+            <button id="cls"> &times; </button>
+           <h3>Alert Message</h3>
+            <p>Are you sure to logout?</p>
+            <div>
+                <button>No</button>
+                <button>Yes</button>
+            </div>
+    </dialog>
+
+    <script>
+        var btn = document.getElementById("btn")
+        var cls = document.getElementById("cls")
+        var box = document.getElementById("box")
+
+        btn.onclick = function() {
+            box.show()
+        }
+
+        cls.onclick = function() {
+            box.close()
+        }
+    </script>
+</body>
+</html>

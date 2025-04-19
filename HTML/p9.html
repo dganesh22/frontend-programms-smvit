@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            selector {
+                property: value;
+            }
+        */
+
+        * {
+            box-sizing: border-box; /* border-box and content-box(default) */
+        }
+
+        form {
+            width: 50%;
+            margin: auto;
+        }
+
+        fieldset {
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        legend {
+            text-align: center;
+            font-size: 2em; /* 1em/rem = 16px */
+            color: slateblue;
+        }
+
+        .form-item {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
+            margin-top: 1rem;
+        }
+
+        .form-item input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        
+        button {
+            padding: 6px 8px;
+            cursor: pointer;
+            width: 100px;
+            font-size: 1.2rem;
+            border: none;
+            background-color: slateblue;
+            color: #fff;
+            border-radius: 6px;
+        }
+
+        @media screen and (max-width:768px) {
+            form {
+                width: 80%;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>form elements</h1>
+    <!-- 
+        forms => ui to collect the user inputs
+            attributes
+                action -> server path / url address
+                method -> type of submitting the input
+                    get =  display the data in url address (query format)
+                    post= hide the data
+                autocomplete
+                    on = allow the form to access browser history
+                    off = do not allow
+                enctype 
+                    application/x-www-form-urlencoded - default
+                    multipart/form-data - file uploading
+                    text/plain   - strings
+                    
+    -->
+    <form action="" method="" autocomplete="" enctype="">
+        <fieldset>
+            <legend>Login Form</legend>
+
+            <div class="form-item">
+                <label for="user">Your username</label>
+                <input type="text" name="user" id="user" value="admin" readonly required>
+            </div>
+
+            <div class="form-item">
+                <label for="pass">Your Password</label>
+                <input type="password" name="pass" id="pass" placeholder="8 - 12 character length" minlength="8" maxlength="12" required>
+            </div>
+
+            <div class="form-item">
+                <!-- <input type="submit" value="Login"> -->
+                 <button type="submit">Login</button>
+            </div>
+        </fieldset>
+    </form>
+    <!-- 
+        form group of html tags
+            form tag
+            fieldset tag 
+            legend tag 
+            label tag - label of form input
+            input tag
+                types -> text,number,email,tel,password,
+                date,datetime,datetime-local,time,month,week,
+                search,color,range,submit,reset,file,url
+                checkbox, radio
+                button - submit (form submission), reset (clear the form)
+            select tag
+            textarea tag - multiline text input - cols and rows
+    -->
+
+
+    <!-- 
+        input attributes
+            type = type of the input and ui of the input
+            name = input field name (mandatory)
+            id = input field id (optional/ mandatory with javascript)
+            value = default value of input
+            placeholder = hint for user
+            required = validate the input
+            readonly = disable the write operation
+            minlength = minimum input length (strings)
+            maxlength = maximum input length (strings)
+
+    -->
+</body>
+</html>
